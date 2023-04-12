@@ -1,0 +1,16 @@
+.boton_carrito {
+    border: none;
+    color: #ac289a;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px 15px;
+    transition: all .3s;
+}
+.boton_carrito:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #ac289a;
+}
+.boton_carrito:focus {
+    outline: none;
+}

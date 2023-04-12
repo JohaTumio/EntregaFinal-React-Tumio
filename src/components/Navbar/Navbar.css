@@ -1,0 +1,19 @@
+.bg-nav{
+    background: #aab5ee;
+    background: linear-gradient(4deg, #aab5ee 0%, #940253 100%);
+}
+h1{
+    font-family: 'Yellowtail', cursive;
+}
+.lista_nav li a {
+    border-bottom: solid 2px #fffffff0;
+    border-radius: 30% 30%;
+    padding: 0.3rem;
+}
+
+.lista_nav li a:hover {
+    transition: all 0.8s;
+    box-shadow: #fc55fc 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+    text-shadow: 1px 1px 2px #fc55fc, 0 0 1em #fc55fc, 0 0 0.2em #fc55fc;
+}
