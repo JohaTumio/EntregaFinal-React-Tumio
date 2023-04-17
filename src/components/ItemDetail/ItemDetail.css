@@ -1,4 +1,30 @@
-.imgDetalleProd{
+.imgDetalleProd {
     width: 10rem;
     height: 10rem;
+}
+
+.cardProductos{
+    width: 18rem;
+}
+
+@media (min-width: 768px) {
+    .imgDetalleProd {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .cardProductos{
+        width: 35rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .imgDetalleProd {
+        width: 30rem;
+        height: 30rem;
+    }
+
+    .cardProductos{
+        width: 60rem;
+    }
 }

@@ -1,7 +1,6 @@
 import CartWidget from '../CartWidget/CartWidget';
 import './Navbar.css';
 import { NavLink, Link } from 'react-router-dom';
-//import NavbarLink from './NavbarLink/NavbarLink';
 
 const Navbar = () => {
     return (
@@ -21,37 +20,21 @@ const Navbar = () => {
                     </button>
                     <div className="collapse navbar-collapse justify-content-center p-1" id="navbarNav">
                         <ul className="navbar-nav fs-5 lista_nav">
-{/*                             <li className="nav-item mx-5">
-                                <a className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" href=" "> Notebooks </a>
-                            </li> */}
                             <li className="nav-item mx-5">
-                                <NavLink className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" to={`/categoria/1`}> Notebooks </NavLink>
+                                <NavLink className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" to={`/categoria/Notebook`}> Notebooks </NavLink>
                             </li>
                             <li className="nav-item mx-5">
-                                <NavLink className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" to={`/categoria/2`}> Tablets </NavLink>
+                                <NavLink className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" to={`/categoria/Tablets`}> Tablets </NavLink>
                             </li>
                             <li className="nav-item mx-5">
-                                <NavLink className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" to={`/categoria/3`}> Celulares </NavLink>
+                                <NavLink className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" to={`/categoria/Celulares`}> Celulares </NavLink>
                             </li>
                             <li className="nav-item mx-5">
-                                <NavLink className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" to={`/categoria/4`}> Pc Escritorio </NavLink>
+                                <NavLink className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" to={`/categoria/PcEscritorio`}> Pc Escritorio </NavLink>
                             </li>
                             <li className="nav-item mx-5">
-                                <NavLink className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" to={`/categoria/5`}> Monitores </NavLink>
+                                <NavLink className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" to={`/categoria/Monitores`}> Monitores </NavLink>
                             </li>
-                            
-{/*                             <li className="nav-item mx-5">
-                                <a className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" href=" "> Tablets </a>
-                            </li> */}
-{/*                             <li className="nav-item mx-5">
-                                <a className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" href=" "> Celulares </a>
-                            </li> */}
-{/*                             <li className="nav-item mx-5">
-                                <a className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" href=" "> Pc Escritorio </a>
-                            </li> */}
-{/*                             <li className="nav-item mx-5">
-                                <a className="nav-link active text-center text-white fw-semibold fst-italic" aria-current="page" href=" "> Monitores </a>
-                            </li> */}
                         </ul>
                     </div>
                 </div>

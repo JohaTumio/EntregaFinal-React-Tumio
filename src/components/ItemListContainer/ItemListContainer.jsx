@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
     const [productos, setProductos] = useState([]);
     
     const {idCategoria} = useParams();
@@ -19,11 +19,11 @@ const ItemListContainer = ({greeting}) => {
 
     return (
         <div>
-            <h2 className='tituloIntro text-center mt-4 rounded border-2 p-2 mx-4'>{greeting}</h2>
+            <h2 className='tituloIntro text-center mt-4 rounded border-2 p-2 mx-4'>Bienvenido a nuestra tienda online de electrónica, donde encontrarás todo lo relacionado con tecnología que seguramente necesitas!</h2>
             <h2 className='text-center tituloProductos mt-4 fs-1'>Productos</h2>
             <ItemList productos={productos} />
         </div>
-    )
+    );
 }
 
 export default ItemListContainer

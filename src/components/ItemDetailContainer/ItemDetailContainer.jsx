@@ -12,13 +12,13 @@ const ItemDetailContainer = () => {
         getProductoById(idItem)
             .then(res => setProducto(res))
             .catch(error => console.error(error))
-    }, [idItem])
+    }, [idItem]);
 
     return (
-        <div>
+        <div className='row justify-content-center mx-0'>
             <ItemDetail {...producto}/>
         </div>
-    )
+    );
 }
 
 export default ItemDetailContainer

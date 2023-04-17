@@ -16,18 +16,18 @@ const ItemCount = ({ stock, onAdd }) => {
         }
     };
 
-    /*     const agregarAlCarrito = () => {
-            console.log(`Cantidad agregada: ${contador} unidades`)
-        } */
-
     return (
-        <div>
-            <div className='contador d-flex align-items-center justify-content-between rounded-pill ms-2 mb-1'>
-                <button className='btnDecrementar fs-4 fw-semibold border-0 rounded-pill' onClick={decrementar}>-</button>
-                <strong className='cantidad text-center fs-5'>{contador}</strong>
-                <button className='btnIncrementar fs-5 fw-semibold border-0 rounded-pill' onClick={incrementar}>+</button>
+        <div className='row'>
+            <div className='col-12 d-flex justify-content-center'>
+                <div className='contador d-flex align-items-center justify-content-between rounded-pill mb-1'>
+                    <button className='btnDecrementar fs-4 fw-semibold border-0 rounded-pill' onClick={decrementar}>-</button>
+                    <strong className='cantidad text-center fs-5'>{contador}</strong>
+                    <button className='btnIncrementar fs-5 fw-semibold border-0 rounded-pill' onClick={incrementar}>+</button>
+                </div>
             </div>
-            <button className='btnAgregarProd border-0 rounded-pill fw-semibold p-1' onClick={() => onAdd(contador)} disabled={!stock}>Agregar al carrito</button>
+            <div className='col-12'>
+                <button className='btnAgregarProd border-0 rounded-pill fw-semibold p-2' onClick={() => onAdd(contador)} >Agregar al carrito</button>
+            </div>
         </div>
     )
 }
