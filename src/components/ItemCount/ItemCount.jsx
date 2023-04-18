@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './ItemCount.css'
+import './ItemCount.css';
 
 const ItemCount = ({ stock, onAdd }) => {
     const [contador, setContador] = useState(1);
@@ -29,7 +29,7 @@ const ItemCount = ({ stock, onAdd }) => {
                 <button className='btnAgregarProd border-0 rounded-pill fw-semibold p-2' onClick={() => onAdd(contador)} >Agregar al carrito</button>
             </div>
         </div>
-    )
+    );
 }
 
 export default ItemCount
