@@ -27,6 +27,12 @@ export const CarProvider = ({children}) =>{
         setCarrito([]);
     }
 
+/*     const totalCantidadCarrito = () => {
+    const totalCantidad = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+    setCarrito(carrito);
+    return totalCantidad;
+    } */
+
     return(
         <CarritoContext.Provider value = {{carrito, agregarProd, eliminarProd, vaciarCarrito}}>
             {children}
