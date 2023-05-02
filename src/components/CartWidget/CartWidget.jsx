@@ -4,11 +4,10 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
-    const {carrito} = useContext(CarritoContext);
-    const totalCantidad = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+    const {totalCantidadCarrito} = useContext(CarritoContext);
     return (
-        <Link to='/cart'>
-        <button className="boton_carrito fs-4 fw-bolder"><i className="fas fa-shopping-cart" /><span>{totalCantidad}</span></button>
+        <Link to='/carrito'>
+        <button className="boton_carrito fs-4 fw-bolder"><i className="fas fa-shopping-cart" /><span>{totalCantidadCarrito()}</span></button>
         </Link>
     )
 }

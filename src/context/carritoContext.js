@@ -1,14 +1,14 @@
 import { useState, createContext } from "react";
 
-export const CarritoContext = createContext({carrito:[]});
+export const CarritoContext = createContext({ carrito: [] });
 
-export const CarProvider = ({children}) =>{
+export const CarProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([]);
     console.log(carrito);
 
     const agregarProd = (item, cantidad) => {
-        if(!prodEnCarrito(item.id)) {
-            setCarrito(prevState => [...prevState, {item, cantidad}]);
+        if (!prodEnCarrito(item.id)) {
+            setCarrito(prevState => [...prevState, { item, cantidad }]);
         } else {
             console.log("Producto ya agregado");
         }
@@ -19,7 +19,7 @@ export const CarProvider = ({children}) =>{
     }
 
     const eliminarProd = (id) => {
-        const carritoActualizado = carrito.filter(prod => prod.id !== id);
+        const carritoActualizado = carrito.filter(prod => prod.item.id !== id);
         setCarrito(carritoActualizado);
     }
 
@@ -27,14 +27,12 @@ export const CarProvider = ({children}) =>{
         setCarrito([]);
     }
 
-/*     const totalCantidadCarrito = () => {
-    const totalCantidad = carrito.reduce((total, producto) => total + producto.cantidad, 0);
-    setCarrito(carrito);
-    return totalCantidad;
-    } */
+    const totalCantidadCarrito = () => {
+        return carrito.reduce((total, producto) => total + producto.cantidad, 0);
+    }
 
-    return(
-        <CarritoContext.Provider value = {{carrito, agregarProd, eliminarProd, vaciarCarrito}}>
+    return (
+        <CarritoContext.Provider value={{ carrito, agregarProd, eliminarProd, vaciarCarrito, totalCantidadCarrito }}>
             {children}
         </CarritoContext.Provider>
     )

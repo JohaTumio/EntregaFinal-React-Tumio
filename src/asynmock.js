@@ -1,7 +1,8 @@
 const productos = [
     {id:"1", 
     nombre:"Notebook Lenovo I5", 
-    precio: 150000, idCategoria:"Notebook", 
+    precio: 150000, 
+    idCategoria:"Notebook", 
     img:"../img/notebook.webp", 
     stock: 5,
     descripcion: `MEMORIA
@@ -166,7 +167,7 @@ export const getProductos = () => {
     return new Promise((res) => {
         setTimeout( () => {
             res(productos);
-        },2000)
+        },1000)
     })
 }
 
@@ -175,7 +176,7 @@ export const getProductoById = (id) => {
         setTimeout( () => {
             const producto = productos.find(prod => prod.id === id);
             res(producto);
-        },2000)
+        },1000)
     })
 }
 
@@ -184,6 +185,6 @@ export const getProductosCategoria = (idCat) => {
         setTimeout(() => {
             const productosCategoria = productos.filter(prod => prod.idCategoria === idCat);
             res(productosCategoria);
-        },2000);
+        },1000);
     })
 }

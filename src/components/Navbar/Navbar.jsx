@@ -7,9 +7,9 @@ const Navbar = () => {
         const [categoria, setCategoria] = useState("");
     
         useEffect( () => {
-            document.title = `Categoría ${categoria}`;
+            document.title = categoria ? `${categoria}` : "ElectroSale";
         }, [categoria])
-    
+
         const handleClick = (categoria) => {
             setCategoria(categoria);
         }
@@ -18,7 +18,7 @@ const Navbar = () => {
             <nav className="navbar navbar-expand-lg bg-nav p-1">
                 <div className="container-fluid">
                     <div className='d-flex flex-column align-items-center'>
-                        <Link onClick={ () => handleClick('Inicio')} to={"/"} className="navbar-brand p-0">
+                        <Link onClick={ () => handleClick('ElectroSale')} to={"/"} className="navbar-brand p-0">
                             <img src="https://cdn-icons-png.flaticon.com/512/2121/2121917.png" alt="Logo" width={40} height={30} className="d-inline-block" />
                         </Link>
                         <h1 className="navbar-brand text-white mb-0 p-0">ElectroSale</h1>
