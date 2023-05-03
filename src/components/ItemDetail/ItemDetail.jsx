@@ -10,7 +10,7 @@ const ItemDetail = ({ nombre, img, precio, stock, descripcion, id }) => {
 
     const { agregarProd } = useContext(CarritoContext);
 
-/*     const descripcionConSaltosDeLinea = descripcion ? descripcion.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1<br>$2') : ''; */
+    /*     const descripcionConSaltosDeLinea = descripcion ? descripcion.replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1<br>$2') : ''; */
 
     const descripcionConSaltosDeLinea = descripcion ? descripcion.replace(/(\r\n|\n|\r)/g, '<br>') : '';
 
@@ -32,13 +32,38 @@ const ItemDetail = ({ nombre, img, precio, stock, descripcion, id }) => {
                 <h3 className='text-body-secondary'><span className='tituloProductos'>Stock:</span> {stock} unidades</h3>
                 {/*                 <p className="card-text fs-4" style={{ whiteSpace: "pre-line" }}>{descripcion}</p> */}
                 <div className="card-text fs-4" dangerouslySetInnerHTML={{ __html: descripcionConSaltosDeLinea }}></div>
-                {
+                {/*                 {
                     agregarCantidad > 0 ? (<Link to={"/carrito"}><button className='btnProducto mt-2'>
                         <span></span>
                         <span></span>
                         <span></span>
                         <span></span> Terminar Compra
-                    </button></Link>) : (<ItemCount stock={stock} onAdd={handlerCantidad} />)
+                    </button></Link>
+                    ) : (<ItemCount stock={stock} onAdd={handlerCantidad} />)
+                } */}
+                {
+                    agregarCantidad > 0 ? (
+                        <div>
+                            <Link to={"/carrito"}>
+                                <button className='btnProducto mt-3'>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span> Terminar Compra
+                                </button>
+                            </Link>
+                            <Link to={"/"}>
+                                <button className='btnProducto mt-3 mx-3'>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span> Seguir Comprando
+                                </button>
+                            </Link>
+                        </div>
+                    ) : (
+                        <ItemCount stock={stock} onAdd={handlerCantidad} />
+                    )
                 }
             </div>
         </article>
