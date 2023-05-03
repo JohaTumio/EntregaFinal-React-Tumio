@@ -5,9 +5,11 @@ import CartItem from "../CartItem/CartItem";
 
 const Cart = () => {
 
+
     useEffect(() => {
-        document.title = 'Carrito';
-    }, []);
+            document.title = 'Carrito';
+        }, []);
+        
 
     const { carrito, vaciarCarrito, totalCantidadCarrito } = useContext(CarritoContext);
 
@@ -24,7 +26,7 @@ const Cart = () => {
     }
     return (
         <div>
-            {carrito.map(producto => <CartItem key={producto.id} {...producto} />)}
+            {carrito.map(producto => <CartItem key={producto.item.id} {...producto} />)}
             <h3>Total: ${total}</h3>
             <button onClick={() => vaciarCarrito()}>Vaciar Carrito</button>
             <Link to='/checkout'>Finalizar Compra</Link>

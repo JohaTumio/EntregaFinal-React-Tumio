@@ -15,7 +15,7 @@ export const CarProvider = ({ children }) => {
     }
 
     const prodEnCarrito = (id) => {
-        return carrito.some(prod => prod.id === id);
+        return carrito.some(prod => prod.item.id === id);
     }
 
     const eliminarProd = (id) => {

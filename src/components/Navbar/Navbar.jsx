@@ -5,14 +5,15 @@ import { useEffect, useState } from 'react';
 
 const Navbar = () => {
         const [categoria, setCategoria] = useState("");
-    
+        
         useEffect( () => {
             document.title = categoria ? `${categoria}` : "ElectroSale";
         }, [categoria])
 
         const handleClick = (categoria) => {
-            setCategoria(categoria);
+            setCategoria(categoria || "");
         }
+
     return (
         <header className='position-sticky top-0 headerNav'>
             <nav className="navbar navbar-expand-lg bg-nav p-1">
