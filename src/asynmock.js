@@ -188,3 +188,4 @@ export const getProductosCategoria = (idCat) => {
         },1000);
     })
 }
+
