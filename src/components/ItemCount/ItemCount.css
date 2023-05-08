@@ -4,32 +4,7 @@
     background-color: #f5f5f5;
 }
 
-.btnDecrementar,
-.btnIncrementar,
-.btnAgregarProd {
-    width: 40px;
-    height: 100%;
-    background: linear-gradient(320deg, rgba(0, 140, 255, 0.678), rgba(128, 0, 128, 0.308));
-    color: #580a58;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
 .cantidad {
     width: 40px;
 }
 
-.btnDecrementar:hover,
-.btnIncrementar:hover {
-    background-color: #ff00dd;
-    color: #fff;
-}
-
-.btnAgregarProd {
-    width: 140px;
-}
-
-.btnAgregarProd:hover {
-    background-color: #ff00dd;
-    color: #fff;
-}

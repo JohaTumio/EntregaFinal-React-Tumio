@@ -6,13 +6,28 @@ export const CarProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([]);
     console.log(carrito);
 
+    /*     const agregarProd = (item, cantidad) => {
+            if (!prodEnCarrito(item.id)) {
+                setCarrito(prevState => [...prevState, { item, cantidad }]);
+            } else {
+                console.log("Producto ya agregado");
+            }
+        } */
+
     const agregarProd = (item, cantidad) => {
-        if (!prodEnCarrito(item.id)) {
-            setCarrito(prevState => [...prevState, { item, cantidad }]);
+        if (prodEnCarrito(item.id)) {
+            const carritoActualizado = carrito.map((prod) => {
+                if (prod.item.id === item.id) {
+                    prod.cantidad += cantidad;
+                }
+                return prod;
+            });
+            setCarrito(carritoActualizado);
         } else {
-            console.log("Producto ya agregado");
+            setCarrito((prevState) => [...prevState, { item, cantidad }]);
         }
-    }
+    };
+
 
     const prodEnCarrito = (id) => {
         return carrito.some(prod => prod.item.id === id);
@@ -23,6 +38,16 @@ export const CarProvider = ({ children }) => {
         setCarrito(carritoActualizado);
     }
 
+    const disminuirCantidadProd = (id) => {
+        const carritoActualizado = carrito.map((prod) => {
+            if (prod.item.id === id) {
+                prod.cantidad -= 1;
+            }
+            return prod;
+        }).filter((prod) => prod.cantidad > 0);
+        setCarrito(carritoActualizado);
+    };
+
     const vaciarCarrito = () => {
         setCarrito([]);
     }
@@ -32,7 +57,7 @@ export const CarProvider = ({ children }) => {
     }
 
     return (
-        <CarritoContext.Provider value={{ carrito, agregarProd, eliminarProd, vaciarCarrito, totalCantidadCarrito }}>
+        <CarritoContext.Provider value={{ carrito, agregarProd, eliminarProd, vaciarCarrito, totalCantidadCarrito, disminuirCantidadProd }}>
             {children}
         </CarritoContext.Provider>
     )

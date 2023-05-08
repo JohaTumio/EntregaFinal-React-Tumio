@@ -1,7 +1,7 @@
 const productos = [
     {id:"1", 
     nombre:"Notebook Lenovo I5", 
-    precio: 150000, 
+    precio: 15, 
     idCategoria:"Notebook", 
     img:"../img/notebook.webp", 
     stock: 5,

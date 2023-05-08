@@ -1,0 +1,125 @@
+.btnDecrementar,
+.btnIncrementar,
+.btnAgregarProd,
+.botonesCarrito,
+.btnDisCantidad,
+.btnElimCantidad {
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(320deg, rgba(0, 140, 255, 0.678), rgba(128, 0, 128, 0.308));
+    color: #580a58;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnDecrementar:hover,
+.btnIncrementar:hover,
+.btnAgregarProd:hover,
+.botonesCarrito:hover,
+.btnDisCantidad:hover,
+.btnElimCantidad:hover {
+    background-color: #ff00dd;
+    color: #fff;
+}
+
+.btnAgregarProd,
+.botonesCarrito,
+.btnDisCantidad {
+    width: 140px;
+}
+.btnElimCantidad, .prodCar{
+    width: 100px
+}
+
+.btnDetalles, .btnFinConCompra{
+    position: relative;
+    padding: 8px 15px;
+    outline: none;
+    border: none;
+    background: linear-gradient(320deg, rgba(0, 140, 255, 0.678), #8000804f);
+    color: #580a58;
+    letter-spacing: 1px;
+    font-size: 15px;
+    overflow: hidden;
+    transition: 0.2s;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btnDetalles:hover, .btnFinConCompra:hover {
+    box-shadow: 0 0 10px #ae00ff, 0 0 20px #001eff, 0 0 50px #ae00ff;
+    transition-delay: 0.6s;
+}
+
+.btnDetalles span, .btnFinConCompra span {
+    position: absolute;
+}
+
+.btnDetalles span:nth-child(1),.btnFinConCompra span:nth-child(1)  {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ae00ff);
+}
+
+.btnDetalles:hover span:nth-child(1), .btnFinConCompra:hover span:nth-child(1) {
+    left: 100%;
+    transition: 0.7s;
+}
+
+.btnDetalles span:nth-child(3), .btnFinConCompra span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #001eff);
+}
+
+.btnDetalles:hover span:nth-child(3), .btnFinConCompra:hover span:nth-child(3) {
+    right: 100%;
+    transition: 0.7s;
+    transition-delay: 0.35s;
+}
+
+.btnDetalles span:nth-child(2), .btnFinConCompra span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #ae00ff);
+}
+
+.btnDetalles:hover span:nth-child(2), .btnFinConCompra:hover span:nth-child(2) {
+    top: 100%;
+    transition: 0.7s;
+    transition-delay: 0.17s;
+}
+
+.btnDetalles span:nth-child(4), .btnFinConCompra span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #001eff);
+}
+
+.btnDetalles:hover span:nth-child(4), .btnFinConCompra:hover span:nth-child(4)  {
+    bottom: 100%;
+    transition: 0.7s;
+    transition-delay: 0.52s;
+}
+
+.btnDetalles:active, .btnFinConCompra:active {
+    background: #ae00af;
+    background: linear-gradient(to top right, #ae00af, #001eff);
+    color: #fff;
+    box-shadow: 0 0 8px #ae00ff, 0 0 8px #001eff, 0 0 8px #ae00ff;
+    transition: 0.1s;
+}
+
+.btnDetalles:active span:nth-child(1) span:nth-child(2) span:nth-child(2) span:nth-child(2), .btnFinConCompra:active span:nth-child(1) span:nth-child(2) span:nth-child(2) span:nth-child(2) {
+    transition: none;
+    transition-delay: none;
+}

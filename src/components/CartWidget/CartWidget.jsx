@@ -13,7 +13,3 @@ const CartWidget = () => {
 }
 
 export default CartWidget
-
-
-// eslint-disable-next-line no-lone-blocks
-{/* <button className="boton_carrito fs-4 fw-bolder"><i className="fas fa-shopping-cart" /><span>6</span></button> */}

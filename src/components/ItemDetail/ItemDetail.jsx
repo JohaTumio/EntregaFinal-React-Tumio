@@ -1,4 +1,5 @@
 import './ItemDetail.css';
+import '../EstiloBotones/estiloBotones.css';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 import { useState, useContext } from 'react';
@@ -45,7 +46,7 @@ const ItemDetail = ({ nombre, img, precio, stock, descripcion, id }) => {
                     agregarCantidad > 0 ? (
                         <div>
                             <Link to={"/carrito"}>
-                                <button className='btnProducto mt-3'>
+                                <button className='btnFinConCompra mt-3'>
                                     <span></span>
                                     <span></span>
                                     <span></span>
@@ -53,7 +54,7 @@ const ItemDetail = ({ nombre, img, precio, stock, descripcion, id }) => {
                                 </button>
                             </Link>
                             <Link to={"/"}>
-                                <button className='btnProducto mt-3 mx-3'>
+                                <button className='btnFinConCompra mt-3 mx-3'>
                                     <span></span>
                                     <span></span>
                                     <span></span>
