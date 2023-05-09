@@ -8,14 +8,21 @@ const Cart = () => {
 
 
     useEffect(() => {
-            document.title = 'Carrito';
-        }, []);
-        
+        document.title = 'Carrito';
+    }, []);
 
-    const { carrito, vaciarCarrito, totalCantidadCarrito } = useContext(CarritoContext);
+
+    const { carrito, vaciarCarrito, totalCantidadCarrito, actualizarStock } = useContext(CarritoContext);
 
     const total = carrito.reduce((total, producto) => total + (producto.item.precio * producto.cantidad), 0);
 
+    const finalizarCompra = () => {
+        carrito.forEach((producto) => {
+            actualizarStock(producto.item.id, producto.cantidad);
+        });
+        vaciarCarrito();
+    };
+    
 
     if (totalCantidadCarrito() === 0) {
         return (
@@ -30,7 +37,7 @@ const Cart = () => {
             {carrito.map(producto => <CartItem key={producto.item.id} {...producto} />)}
             <h3>Total: ${total}</h3>
             <button className="botonesCarrito border-0 rounded-pill fw-semibold p-1 m-3" onClick={() => vaciarCarrito()}>Vaciar Carrito</button>
-            <Link to='/checkout'><button className="botonesCarrito border-0 rounded-pill fw-semibold p-1">Finalizar Compra</button></Link>
+            <Link to='/checkout'><button onClick={() => finalizarCompra()} className="botonesCarrito border-0 rounded-pill fw-semibold p-1">Finalizar Compra</button></Link>
         </div>
     )
 }
