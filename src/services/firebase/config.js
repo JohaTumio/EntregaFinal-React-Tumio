@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import {getFirestore} from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAVV_1aTud-Y1M_TuvmUbBnBHM8AYRH37E",
-    authDomain: "electrosale-a1321.firebaseapp.com",
-    projectId: "electrosale-a1321",
-    storageBucket: "electrosale-a1321.appspot.com",
-    messagingSenderId: "244880684779",
-    appId: "1:244880684779:web:3820c54de51ca5d51ff0ae"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);

@@ -1,5 +1,4 @@
 import './ItemListContainer.css';
-//import { getProductos, getProductosCategoria } from '../../asynmock';
 import { useState, useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
@@ -24,15 +23,6 @@ const ItemListContainer = () => {
         })
         .catch(error => console.error(error))
     },[idCategoria])
-
-    
-/*     useEffect(() => {
-        const funcionProductos = idCategoria ? getProductosCategoria : getProductos;
-
-        funcionProductos(idCategoria)
-            .then(res => setProductos(res))
-            .catch(error => console.error(error))
-    }, [idCategoria]) */
 
     return (
         <div>

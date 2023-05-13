@@ -1,11 +1,29 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect, useCallback } from "react";
 import { doc, updateDoc, getDoc } from "firebase/firestore";
 import { db } from "../services/firebase/config";
 
 export const CarritoContext = createContext({ carrito: [] });
 
 export const CarProvider = ({ children }) => {
-    const [carrito, setCarrito] = useState([]);
+    const [carrito, setCarrito] = useState(() => {
+        const carritoGuardado = JSON.parse(localStorage.getItem('carrito'));
+        return carritoGuardado ? carritoGuardado : [];
+    });
+
+    const guardarCarritoEnLocalStorage = useCallback(() => {
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+    }, [carrito]);
+
+    useEffect(() => {
+        guardarCarritoEnLocalStorage();
+    }, [guardarCarritoEnLocalStorage]);
+
+    useEffect(() => {
+        const carritoGuardado = JSON.parse(localStorage.getItem('carrito'));
+        if (carritoGuardado) {
+            setCarrito(carritoGuardado);
+        }
+    }, []);
 
     console.log(carrito);
 
@@ -21,6 +39,7 @@ export const CarProvider = ({ children }) => {
         } else {
             setCarrito((prevState) => [...prevState, { item, cantidad }]);
         }
+        guardarCarritoEnLocalStorage();
     };
 
     const prodEnCarrito = (id) => {
@@ -30,6 +49,7 @@ export const CarProvider = ({ children }) => {
     const eliminarProd = (id) => {
         const carritoActualizado = carrito.filter(prod => prod.item.id !== id);
         setCarrito(carritoActualizado);
+        guardarCarritoEnLocalStorage(carritoActualizado);
     }
 
     const disminuirCantidadProd = (id) => {
@@ -40,19 +60,24 @@ export const CarProvider = ({ children }) => {
             return prod;
         }).filter((prod) => prod.cantidad > 0);
         setCarrito(carritoActualizado);
+        guardarCarritoEnLocalStorage(carritoActualizado);
     };
 
     const vaciarCarrito = () => {
         setCarrito([]);
+        localStorage.removeItem('carrito');
     }
 
     const totalCantidadCarrito = () => {
         return carrito.reduce((total, producto) => total + producto.cantidad, 0);
     }
 
+    const totalCompra = () => {
+        return carrito.reduce((total, producto) => total + (producto.item.precio * producto.cantidad), 0);
+    }
+
     const actualizarStock = (id, cantidad) => {
         const productoRef = doc(db, "productos", id);
-
         getDoc(productoRef)
             .then((productoSnap) => {
                 const productoData = productoSnap.data();
@@ -68,18 +93,14 @@ export const CarProvider = ({ children }) => {
             })
             .then(() => {
                 console.log("El stock se actualizó correctamente");
-                vaciarCarrito();
             })
             .catch((error) => {
                 console.log(error);
             });
     };
 
-
-
-
     return (
-        <CarritoContext.Provider value={{ carrito, agregarProd, eliminarProd, vaciarCarrito, totalCantidadCarrito, disminuirCantidadProd, actualizarStock }}>
+        <CarritoContext.Provider value={{ carrito, agregarProd, eliminarProd, vaciarCarrito, totalCantidadCarrito, disminuirCantidadProd, actualizarStock, totalCompra }}>
             {children}
         </CarritoContext.Provider>
     )

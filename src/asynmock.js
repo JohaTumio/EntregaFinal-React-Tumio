@@ -1,4 +1,4 @@
-const productos = [
+/* const productos = [
     {id:"1", 
     nombre:"Notebook Lenovo I5", 
     precio: 15, 
@@ -189,3 +189,4 @@ export const getProductosCategoria = (idCat) => {
     })
 }
 
+ */

@@ -1,16 +1,16 @@
 import { useContext } from "react";
 import { CarritoContext } from "../../context/CarritoContext.js";
 import '../EstiloBotones/estiloBotones.css';
+import './CartItem.css'
 
 const CartItem = ({ item, cantidad }) => {
     const { eliminarProd, disminuirCantidadProd } = useContext(CarritoContext);
     return (
-        <div>
+        <div className="productosCarrito">
             <h4>{item.nombre}</h4>
-            <p className="hola">Cantidad: {cantidad}</p>
-            <p>Precio: ${item.precio}</p>
-            {/*             <button onClick={()=> eliminarProd(item.id)}>Eliminar</button>
-            <button onClick={() => disminuirCantidadProd(item.id)}>Disminuir cantidad</button> */}
+            <p className="fs-5">Cantidad: {cantidad}</p>
+            <p className="fs-5">Precio: ${item.precio}</p>
+            <p className="fs-5">Total: ${item.precio * cantidad}</p>
             {
                 cantidad > 1 ? (
                     <button className="btnDisCantidad border-0 rounded-pill fw-semibold p-1" onClick={() => disminuirCantidadProd(item.id)}>
@@ -22,7 +22,6 @@ const CartItem = ({ item, cantidad }) => {
                     </button>
                 )
             }
-
         </div>
     )
 }

@@ -5,11 +5,15 @@
 .btnDisCantidad,
 .btnElimCantidad {
     width: 40px;
-    height: 100%;
     background: linear-gradient(320deg, rgba(0, 140, 255, 0.678), rgba(128, 0, 128, 0.308));
     color: #580a58;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.btnDecrementar,
+.btnIncrementar{
+    height: 100%;
 }
 
 .btnDecrementar:hover,

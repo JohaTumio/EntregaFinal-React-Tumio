@@ -24,12 +24,9 @@ const Navbar = () => {
                         </Link>
                         <h1 className="navbar-brand text-white mb-0 p-0">ElectroSale</h1>
                     </div>
-                    {/*                     <Link onClick={() => handleClick('Carrito')} to='/carrito'>
+                    <Link onClick={() => handleClick('Carrito')} to='/carrito'>
                         <CartWidget />
-                    </Link> */}
-                    <div onClick={() => handleClick('Carrito')}>
-                        <CartWidget />
-                    </div>
+                    </Link>
                     <button className="navbar-toggler bg-white fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>
