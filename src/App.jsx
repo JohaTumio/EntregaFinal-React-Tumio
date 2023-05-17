@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CarProvider } from './context/CarritoContext.js';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
@@ -13,6 +16,7 @@ function App() {
       <BrowserRouter>
         <CarProvider>
           <Navbar />
+          <ToastContainer />
           <Routes>
             <Route path='/' element={<ItemListContainer />} />
             <Route path='/categoria/:idCategoria' element={<ItemListContainer />} />

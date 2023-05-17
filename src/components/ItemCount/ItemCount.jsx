@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './ItemCount.css';
 import '../EstiloBotones/estiloBotones.css';
+import { notificacionToastify } from '../ToastifySweetAlert/ToastifySweetAlert';
 
 const ItemCount = ({ stock, onAdd }) => {
     const [contador, setContador] = useState(1);
@@ -8,6 +9,8 @@ const ItemCount = ({ stock, onAdd }) => {
     const incrementar = () => {
         if (contador < stock) {
             setContador(contador + 1);
+        }else {
+            notificacionToastify("No hay mas stock", "error");
         }
     };
 
@@ -32,7 +35,6 @@ const ItemCount = ({ stock, onAdd }) => {
                     disabled={contador > stock ? true : false}>
                     {contador > stock ? 'No hay stock' : 'Agregar al carrito'}
                 </button>
-
             </div>
         </div>
     );

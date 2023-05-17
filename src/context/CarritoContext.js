@@ -1,6 +1,9 @@
 import { useState, createContext, useEffect, useCallback } from "react";
 import { doc, updateDoc, getDoc } from "firebase/firestore";
 import { db } from "../services/firebase/config";
+import { notificacionToastify } from "../components/ToastifySweetAlert/ToastifySweetAlert";
+
+
 
 export const CarritoContext = createContext({ carrito: [] });
 
@@ -36,8 +39,13 @@ export const CarProvider = ({ children }) => {
                 return prod;
             });
             setCarrito(carritoActualizado);
+            notificacionToastify("Producto agregado al carrito", "success");
+            
+
         } else {
             setCarrito((prevState) => [...prevState, { item, cantidad }]);
+            notificacionToastify("Producto agregado al carrito", "success");
+
         }
         guardarCarritoEnLocalStorage();
     };
@@ -50,6 +58,7 @@ export const CarProvider = ({ children }) => {
         const carritoActualizado = carrito.filter(prod => prod.item.id !== id);
         setCarrito(carritoActualizado);
         guardarCarritoEnLocalStorage(carritoActualizado);
+        notificacionToastify("Producto eliminado", "success");
     }
 
     const disminuirCantidadProd = (id) => {
@@ -61,11 +70,13 @@ export const CarProvider = ({ children }) => {
         }).filter((prod) => prod.cantidad > 0);
         setCarrito(carritoActualizado);
         guardarCarritoEnLocalStorage(carritoActualizado);
+        notificacionToastify("Cantidad disminuida", "success");
     };
 
     const vaciarCarrito = () => {
         setCarrito([]);
         localStorage.removeItem('carrito');
+        notificacionToastify("Carrito vacío", "success");
     }
 
     const totalCantidadCarrito = () => {
@@ -84,6 +95,7 @@ export const CarProvider = ({ children }) => {
 
                 if (productoData.stock < cantidad) {
                     console.error("No hay suficiente stock para completar la compra");
+                    notificacionToastify("No hay suficiente stock", "error");
                     return;
                 }
 

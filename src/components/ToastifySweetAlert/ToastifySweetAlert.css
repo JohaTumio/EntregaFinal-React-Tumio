@@ -1,0 +1,16 @@
+.toast-message {
+    background: linear-gradient(4deg, #c7cdee 0%, #faa7d4 100%);
+    color: #580a58;
+    border-radius: 50px;
+    height: 10px;
+    width: max-content;
+    font-size: 13px;
+    text-align: center;
+    font-family: 'Play', sans-serif;
+}
+
+@media (min-width: 768px) {
+    .toast-message {
+        font-size: 18px;
+    }
+}

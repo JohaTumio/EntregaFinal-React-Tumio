@@ -39,6 +39,6 @@ Si deseas contribuir a este proyecto, puedes hacer un fork del repositorio y cre
 
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENSE` para obtener más información.
 
-\## Autor
+\# Autor
 
 Este proyecto fue desarrollado por Johanna Tumio como parte del curso de Programación Frontend en CoderHouse.
