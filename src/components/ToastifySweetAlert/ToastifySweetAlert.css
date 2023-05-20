@@ -1,3 +1,4 @@
+/* toastify */
 .toast-message {
     background: linear-gradient(4deg, #c7cdee 0%, #faa7d4 100%);
     color: #580a58;
@@ -9,8 +10,71 @@
     font-family: 'Play', sans-serif;
 }
 
+/* sweetAlert */
+/* Icono*/
+.swal2-icon {
+    font-size: 5px !important;
+}
+
+/* titulo*/
+.swal2-title {
+    font-size: 10px !important;
+}
+
+/* parrafo*/
+.swal2-html-container {
+    font-size: 12px !important;
+}
+
+/* boton*/
+.swal2-styled.swal2-confirm {
+    background: linear-gradient(320deg, rgba(0, 140, 255, 0.678), #8000804f) !important;
+    color: #580a58 !important;
+    font-size: 10px !important;
+}
+
+/* tamaño alerta*/
+.swal2-popup {
+    width: 230px !important;
+    height: 220px !important;
+    border-radius: 5% !important;
+    border: solid 3px #b762c3ac !important;
+}
+
+.swal2-actions {
+    margin: 0 !important;
+}
+
 @media (min-width: 768px) {
     .toast-message {
         font-size: 18px;
+    }
+
+    /* sweetAlert */
+    /* Icono*/
+    .swal2-icon {
+        font-size: 12px !important;
+    }
+
+    /* titulo*/
+    .swal2-title {
+        font-size: 23px !important;
+    }
+
+    /* parrafo*/
+    .swal2-html-container {
+        font-size: 20px !important;
+    }
+
+    /* boton*/
+    .swal2-styled.swal2-confirm {
+        font-size: 15px !important;
+    }
+
+    /* tamaño alerta*/
+    .swal2-popup {
+        width: 380px !important;
+        height: 410px !important;
+        border-radius: 5% !important;
     }
 }

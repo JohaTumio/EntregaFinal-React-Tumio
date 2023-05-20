@@ -19,21 +19,17 @@ export const notificacionToastify = (text, type) => {
 export const alertaSweet = (mensaje, tipo, orden) => {
     Swal.fire({
         icon: tipo,
-        title: '<h2 className="tituloSweet">¡Completado!</h2>',
+        title: '¡Completado!',
         html: `
         <div>
-            <p className="pFormulario">
-                ${mensaje}
-            </p>
+            <p>${mensaje}</p>
             <p>Tu número de orden es: ${orden}</p>
         </div>
         `,
         showConfirmButton: true,
-        customClass: {
-            popup: 'tamañoAlertSweet',
-        },
     });
 };
+
 
 
 
